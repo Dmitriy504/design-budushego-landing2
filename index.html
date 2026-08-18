@@ -3,247 +3,269 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Дизайн Будущего</title>
+<title>Дизайн Будущего | Канал в MAX</title>
+
+<meta name="description" content="Красивые дома, современные интерьеры и идеи для вдохновения каждый день. Подписывайтесь на канал Дизайн Будущего в MAX.">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {
+if (document.scripts[j].src === r) { return; }
+}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
+})(window, document,'script',
+'https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+ym(111697403, 'init', {
+clickmap:true,
+trackLinks:true,
+accurateTrackBounce:true,
+webvisor:true
+});
+</script>
+
+<noscript>
+<div>
+<img src="https://mc.yandex.ru/watch/111697403"
+style="position:absolute; left:-9999px;"
+alt="" />
+</div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
 
-html{
-    scroll-behavior:smooth;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    background:#0f1115;
-    color:white;
+background:#0f1115;
+color:#fff;
+line-height:1.6;
 }
 
-/* Шапка */
-
-.topbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    background:rgba(15,17,21,.95);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-    border-bottom:1px solid rgba(255,255,255,.08);
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
 }
 
-.topbar-content{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 20px;
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(15,17,21,.95);
+backdrop-filter:blur(10px);
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.header-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
 }
 
 .logo{
-    font-size:24px;
-    font-weight:bold;
-}
-
-.header-btn{
-    background:#f4b942;
-    color:#111;
-    text-decoration:none;
-    padding:12px 24px;
-    border-radius:50px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.header-btn:hover{
-    transform:translateY(-2px);
-}
-
-/* Общие стили */
-
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
-}
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1920');
-    background-size:cover;
-    background-position:center;
-}
-
-.hero h1{
-    font-size:72px;
-    margin-bottom:20px;
-}
-
-.hero h1 span{
-    color:#f4b942;
-}
-
-.hero p{
-    max-width:800px;
-    margin:auto;
-    font-size:22px;
-    line-height:1.7;
-    color:#ddd;
-}
-
-.counter{
-    margin-top:25px;
-    font-size:24px;
-}
-
-.counter span{
-    color:#f4b942;
-    font-weight:bold;
+font-size:24px;
+font-weight:700;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:35px;
-    background:#f4b942;
-    color:#111;
-    text-decoration:none;
-    padding:18px 40px;
-    border-radius:50px;
-    font-size:22px;
-    font-weight:bold;
-    transition:.3s;
+display:inline-block;
+background:#f4b942;
+color:#111;
+text-decoration:none;
+padding:16px 32px;
+border-radius:50px;
+font-weight:700;
+transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+transform:translateY(-3px);
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding-top:80px;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1920');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#f4b942;
+}
+
+.hero p{
+max-width:800px;
+margin:auto;
+font-size:22px;
+color:#ddd;
+}
+
+.counter{
+margin-top:25px;
+font-size:24px;
+}
+
+.counter strong{
+color:#f4b942;
 }
 
 .section{
-    padding:90px 20px;
+padding:90px 0;
 }
 
 .section-title{
-    text-align:center;
-    font-size:44px;
-    margin-bottom:50px;
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
 }
 
 .cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
 .card{
-    background:#171b22;
-    padding:30px;
-    border-radius:20px;
-    transition:.3s;
-    line-height:1.7;
-}
-
-.card:hover{
-    transform:translateY(-5px);
+background:#171b22;
+padding:30px;
+border-radius:20px;
 }
 
 .card h3{
-    margin-bottom:15px;
-    color:#f4b942;
+margin-bottom:15px;
+color:#f4b942;
 }
 
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
 }
 
 .gallery img{
-    width:100%;
-    height:280px;
-    object-fit:cover;
-    border-radius:20px;
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
 }
 
-.subscribe-center{
-    text-align:center;
-    margin-top:40px;
+.center{
+text-align:center;
+margin-top:40px;
+}
+
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.review{
+background:#171b22;
+padding:30px;
+border-radius:20px;
+}
+
+.review-author{
+margin-top:15px;
+color:#f4b942;
+font-weight:bold;
 }
 
 .cta{
-    text-align:center;
-    background:#171b22;
-    padding:100px 20px;
+padding:100px 20px;
+background:#171b22;
+text-align:center;
 }
 
 .cta h2{
-    font-size:48px;
-    margin-bottom:20px;
+font-size:48px;
+margin-bottom:20px;
 }
 
 .cta p{
-    max-width:700px;
-    margin:auto;
-    color:#ccc;
-    font-size:20px;
-    line-height:1.7;
+max-width:700px;
+margin:auto;
+font-size:20px;
+color:#ccc;
 }
 
 footer{
-    text-align:center;
-    padding:30px;
-    color:#777;
+text-align:center;
+padding:30px;
+color:#777;
 }
 
 @media(max-width:768px){
 
 .hero h1{
-    font-size:46px;
+font-size:42px;
 }
 
 .hero p{
-    font-size:18px;
+font-size:18px;
 }
 
 .section-title{
-    font-size:34px;
+font-size:32px;
 }
 
 .cta h2{
-    font-size:34px;
+font-size:34px;
 }
 
 .logo{
-    font-size:18px;
+font-size:18px;
 }
 
-.header-btn{
-    padding:10px 18px;
-    font-size:14px;
+.btn{
+padding:14px 24px;
+font-size:16px;
 }
 
 }
+
 </style>
 </head>
+
 <body>
 
-<header class="topbar">
-    <div class="container topbar-content">
-        <div class="logo">🏡 Дизайн Будущего</div>
+<header>
+<div class="container header-inner">
+<div class="logo">🏡 Дизайн Будущего</div>
 
-        <a href="https://max.ru/channel_future_design"
-           target="_blank"
-           class="header-btn">
-           Подписаться
-        </a>
-    </div>
+<a href="https://max.ru/channel_future_design"
+target="_blank"
+class="btn"
+onclick="ym(111697403,'reachGoal','subscribe_click');">
+Подписаться
+</a>
+</div>
 </header>
 
 <section class="hero">
@@ -252,19 +274,24 @@ footer{
 <h1>Дизайн <span>Будущего</span></h1>
 
 <p>
-Красивые дома, стильные интерьеры и идеи для вдохновения каждый день.
-Автор канала простыми словами рассказывает о современных домах, интересных дизайнерских решениях и делится своим опытом и наблюдениями.
+Красивые дома, стильные интерьеры и интересные дизайнерские решения со всего мира.
+Автор канала простыми словами рассказывает о дизайне, архитектуре и идеях, которые вдохновляют.
 </p>
 
 <div class="counter">
-Уже более <span>1000+</span> любителей дизайна вдохновляются вместе с нами
+Уже более <strong>1000+</strong> подписчиков
 </div>
+
+<div style="margin-top:35px;">
 
 <a href="https://max.ru/channel_future_design"
 target="_blank"
-class="btn">
+class="btn"
+onclick="ym(111697403,'reachGoal','subscribe_click');">
 Подписаться в MAX
 </a>
+
+</div>
 
 </div>
 </section>
@@ -278,30 +305,22 @@ class="btn">
 
 <div class="card">
 <h3>🏡 Современные дома</h3>
-<p>
-Интересные проекты домов со всего мира. Современная архитектура, необычные фасады и красивые решения.
-</p>
+<p>Красивые проекты домов и коттеджей со всего мира.</p>
 </div>
 
 <div class="card">
 <h3>🛋 Стильные интерьеры</h3>
-<p>
-Гостиные, кухни, спальни, ванные комнаты и идеи для создания уютного пространства.
-</p>
+<p>Гостиные, кухни, спальни и интересные идеи для дома.</p>
 </div>
 
 <div class="card">
-<h3>💡 Идеи для ремонта</h3>
-<p>
-Полезные находки, материалы, освещение, планировки и детали, которые делают интерьер лучше.
-</p>
+<h3>💡 Идеи для вдохновения</h3>
+<p>Необычные решения, которые хочется сохранить себе.</p>
 </div>
 
 <div class="card">
 <h3>☕ Простым языком</h3>
-<p>
-Без сложных терминов и скучных лекций. Только интересные примеры и личный взгляд автора канала.
-</p>
+<p>Без сложных терминов. Только интересные наблюдения и красивые проекты.</p>
 </div>
 
 </div>
@@ -316,20 +335,21 @@ class="btn">
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200">
-
-<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200">
-
 <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200">
+<img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1200">
 
 </div>
 
-<div class="subscribe-center">
+<div class="center">
+
 <a href="https://max.ru/channel_future_design"
 target="_blank"
-class="btn">
-Смотреть канал в MAX
+class="btn"
+onclick="ym(111697403,'reachGoal','subscribe_click');">
+Смотреть канал
 </a>
+
 </div>
 
 </div>
@@ -340,30 +360,21 @@ class="btn">
 
 <h2 class="section-title">Отзывы подписчиков</h2>
 
-<div class="cards">
+<div class="reviews">
 
-<div class="card">
-<p>
-«Подписался случайно, а теперь регулярно сохраняю идеи для будущего дома. Очень вдохновляющий канал.»
-</p>
-<br>
-<strong>Алексей, Москва</strong>
+<div class="review">
+«Подписался случайно, а теперь регулярно сохраняю идеи для будущего дома.»
+<div class="review-author">Алексей</div>
 </div>
 
-<div class="card">
-<p>
-«Нравится, что всё объясняется простыми словами. Без сложных терминов и навязчивой рекламы.»
-</p>
-<br>
-<strong>Ольга, Санкт-Петербург</strong>
+<div class="review">
+«Очень нравится, что автор пишет простыми словами и показывает действительно интересные проекты.»
+<div class="review-author">Ольга</div>
 </div>
 
-<div class="card">
-<p>
-«Благодаря каналу нашёл несколько интересных решений для ремонта. Теперь жду каждый новый пост.»
-</p>
-<br>
-<strong>Сергей, Казань</strong>
+<div class="review">
+«Каждый день нахожу что-то новое для вдохновения. Отличный канал для любителей дизайна.»
+<div class="review-author">Сергей</div>
 </div>
 
 </div>
@@ -373,22 +384,27 @@ class="btn">
 
 <section class="cta">
 
-<h2>Подпишитесь на канал «Дизайн Будущего»</h2>
+<h2>Присоединяйтесь к каналу</h2>
 
 <p>
-Каждый день новые дома, красивые интерьеры, дизайнерские идеи и вдохновение для вашего будущего ремонта или строительства.
+Каждый день новые дома, красивые интерьеры, интересные идеи и вдохновение для вашего будущего ремонта или строительства.
 </p>
+
+<div style="margin-top:35px;">
 
 <a href="https://max.ru/channel_future_design"
 target="_blank"
-class="btn">
+class="btn"
+onclick="ym(111697403,'reachGoal','subscribe_click');">
 Перейти в канал MAX
 </a>
+
+</div>
 
 </section>
 
 <footer>
-© 2026 Дизайн Будущего • Канал в MAX
+© 2026 Дизайн Будущего
 </footer>
 
 </body>
