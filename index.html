@@ -13,10 +13,55 @@
     font-family:Arial, sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#0f1115;
     color:white;
 }
+
+/* Шапка */
+
+.topbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(15,17,21,.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.topbar-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.header-btn{
+    background:#f4b942;
+    color:#111;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.header-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* Общие стили */
 
 .container{
     max-width:1200px;
@@ -38,7 +83,7 @@ body{
 }
 
 .hero h1{
-    font-size:70px;
+    font-size:72px;
     margin-bottom:20px;
 }
 
@@ -47,11 +92,21 @@ body{
 }
 
 .hero p{
-    max-width:700px;
+    max-width:800px;
     margin:auto;
     font-size:22px;
-    line-height:1.6;
+    line-height:1.7;
     color:#ddd;
+}
+
+.counter{
+    margin-top:25px;
+    font-size:24px;
+}
+
+.counter span{
+    color:#f4b942;
+    font-weight:bold;
 }
 
 .btn{
@@ -59,8 +114,8 @@ body{
     margin-top:35px;
     background:#f4b942;
     color:#111;
-    padding:18px 40px;
     text-decoration:none;
+    padding:18px 40px;
     border-radius:50px;
     font-size:22px;
     font-weight:bold;
@@ -72,26 +127,27 @@ body{
 }
 
 .section{
-    padding:80px 20px;
+    padding:90px 20px;
 }
 
 .section-title{
     text-align:center;
-    font-size:42px;
+    font-size:44px;
     margin-bottom:50px;
 }
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
 }
 
 .card{
     background:#171b22;
-    border-radius:20px;
     padding:30px;
+    border-radius:20px;
     transition:.3s;
+    line-height:1.7;
 }
 
 .card:hover{
@@ -113,17 +169,22 @@ body{
     width:100%;
     height:280px;
     object-fit:cover;
-    border-radius:18px;
+    border-radius:20px;
+}
+
+.subscribe-center{
+    text-align:center;
+    margin-top:40px;
 }
 
 .cta{
     text-align:center;
-    padding:100px 20px;
     background:#171b22;
+    padding:100px 20px;
 }
 
 .cta h2{
-    font-size:46px;
+    font-size:48px;
     margin-bottom:20px;
 }
 
@@ -132,65 +193,125 @@ body{
     margin:auto;
     color:#ccc;
     font-size:20px;
-    line-height:1.6;
+    line-height:1.7;
 }
 
 footer{
     text-align:center;
-    padding:25px;
+    padding:30px;
     color:#777;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:46px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.section-title{
+    font-size:34px;
+}
+
+.cta h2{
+    font-size:34px;
+}
+
+.logo{
+    font-size:18px;
+}
+
+.header-btn{
+    padding:10px 18px;
+    font-size:14px;
+}
+
 }
 </style>
 </head>
 <body>
 
+<header class="topbar">
+    <div class="container topbar-content">
+        <div class="logo">🏡 Дизайн Будущего</div>
+
+        <a href="https://max.ru/channel_future_design"
+           target="_blank"
+           class="header-btn">
+           Подписаться
+        </a>
+    </div>
+</header>
+
 <section class="hero">
 <div class="container">
+
 <h1>Дизайн <span>Будущего</span></h1>
 
 <p>
 Красивые дома, стильные интерьеры и идеи для вдохновения каждый день.
-Автор канала простыми словами показывает интересные проекты со всего мира и делится своим мнением.
+Автор канала простыми словами рассказывает о современных домах, интересных дизайнерских решениях и делится своим опытом и наблюдениями.
 </p>
 
-<a href="https://max.ru/" class="btn">
+<div class="counter">
+Уже более <span>1000+</span> любителей дизайна вдохновляются вместе с нами
+</div>
+
+<a href="https://max.ru/channel_future_design"
+target="_blank"
+class="btn">
 Подписаться в MAX
 </a>
+
 </div>
 </section>
 
 <section class="section">
 <div class="container">
+
 <h2 class="section-title">Что публикуется в канале</h2>
 
 <div class="cards">
 
 <div class="card">
 <h3>🏡 Современные дома</h3>
-<p>Красивые проекты частных домов и коттеджей.</p>
+<p>
+Интересные проекты домов со всего мира. Современная архитектура, необычные фасады и красивые решения.
+</p>
 </div>
 
 <div class="card">
-<h3>🛋 Интерьеры</h3>
-<p>Гостиные, кухни, спальни и необычные дизайнерские решения.</p>
+<h3>🛋 Стильные интерьеры</h3>
+<p>
+Гостиные, кухни, спальни, ванные комнаты и идеи для создания уютного пространства.
+</p>
 </div>
 
 <div class="card">
 <h3>💡 Идеи для ремонта</h3>
-<p>Полезные находки и вдохновляющие примеры.</p>
+<p>
+Полезные находки, материалы, освещение, планировки и детали, которые делают интерьер лучше.
+</p>
 </div>
 
 <div class="card">
 <h3>☕ Простым языком</h3>
-<p>Без сложных терминов. Только интересный контент и личные наблюдения автора.</p>
+<p>
+Без сложных терминов и скучных лекций. Только интересные примеры и личный взгляд автора канала.
+</p>
 </div>
 
 </div>
+
 </div>
 </section>
 
 <section class="section">
 <div class="container">
+
 <h2 class="section-title">Для вдохновения</h2>
 
 <div class="gallery">
@@ -202,26 +323,72 @@ footer{
 <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200">
 
 </div>
+
+<div class="subscribe-center">
+<a href="https://max.ru/channel_future_design"
+target="_blank"
+class="btn">
+Смотреть канал в MAX
+</a>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2 class="section-title">Отзывы подписчиков</h2>
+
+<div class="cards">
+
+<div class="card">
+<p>
+«Подписался случайно, а теперь регулярно сохраняю идеи для будущего дома. Очень вдохновляющий канал.»
+</p>
+<br>
+<strong>Алексей, Москва</strong>
+</div>
+
+<div class="card">
+<p>
+«Нравится, что всё объясняется простыми словами. Без сложных терминов и навязчивой рекламы.»
+</p>
+<br>
+<strong>Ольга, Санкт-Петербург</strong>
+</div>
+
+<div class="card">
+<p>
+«Благодаря каналу нашёл несколько интересных решений для ремонта. Теперь жду каждый новый пост.»
+</p>
+<br>
+<strong>Сергей, Казань</strong>
+</div>
+
+</div>
+
 </div>
 </section>
 
 <section class="cta">
-<div class="container">
+
 <h2>Подпишитесь на канал «Дизайн Будущего»</h2>
 
 <p>
-Если вам нравятся красивые дома, уютные интерьеры и современные идеи для жизни, присоединяйтесь к сообществу любителей дизайна.
+Каждый день новые дома, красивые интерьеры, дизайнерские идеи и вдохновение для вашего будущего ремонта или строительства.
 </p>
 
-<a href="https://max.ru/" class="btn">
+<a href="https://max.ru/channel_future_design"
+target="_blank"
+class="btn">
 Перейти в канал MAX
 </a>
 
-</div>
 </section>
 
 <footer>
-© 2026 Дизайн Будущего
+© 2026 Дизайн Будущего • Канал в MAX
 </footer>
 
 </body>
