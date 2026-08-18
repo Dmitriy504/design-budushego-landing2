@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дизайн Будущего</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0f1115;
+    color:white;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1920');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#f4b942;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:22px;
+    line-height:1.6;
+    color:#ddd;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    background:#f4b942;
+    color:#111;
+    padding:18px 40px;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:22px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.section{
+    padding:80px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#171b22;
+    border-radius:20px;
+    padding:30px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#f4b942;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:18px;
+}
+
+.cta{
+    text-align:center;
+    padding:100px 20px;
+    background:#171b22;
+}
+
+.cta h2{
+    font-size:46px;
+    margin-bottom:20px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:auto;
+    color:#ccc;
+    font-size:20px;
+    line-height:1.6;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#777;
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="container">
+<h1>Дизайн <span>Будущего</span></h1>
+
+<p>
+Красивые дома, стильные интерьеры и идеи для вдохновения каждый день.
+Автор канала простыми словами показывает интересные проекты со всего мира и делится своим мнением.
+</p>
+
+<a href="https://max.ru/" class="btn">
+Подписаться в MAX
+</a>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Что публикуется в канале</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🏡 Современные дома</h3>
+<p>Красивые проекты частных домов и коттеджей.</p>
+</div>
+
+<div class="card">
+<h3>🛋 Интерьеры</h3>
+<p>Гостиные, кухни, спальни и необычные дизайнерские решения.</p>
+</div>
+
+<div class="card">
+<h3>💡 Идеи для ремонта</h3>
+<p>Полезные находки и вдохновляющие примеры.</p>
+</div>
+
+<div class="card">
+<h3>☕ Простым языком</h3>
+<p>Без сложных терминов. Только интересный контент и личные наблюдения автора.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Для вдохновения</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200">
+
+<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200">
+
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200">
+
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+<h2>Подпишитесь на канал «Дизайн Будущего»</h2>
+
+<p>
+Если вам нравятся красивые дома, уютные интерьеры и современные идеи для жизни, присоединяйтесь к сообществу любителей дизайна.
+</p>
+
+<a href="https://max.ru/" class="btn">
+Перейти в канал MAX
+</a>
+
+</div>
+</section>
+
+<footer>
+© 2026 Дизайн Будущего
+</footer>
+
+</body>
+</html>
