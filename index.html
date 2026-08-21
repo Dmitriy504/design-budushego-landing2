@@ -450,13 +450,19 @@ function getSubscriberWord(number) {
     return 'подписчиков';
 }
 
-const count = 1683;
+fetch('subscribers.json')
+.then(response => response.json())
+.then(data => {
+
+const count = data.count;
 
 document.getElementById('subscriberCount').textContent =
     count.toLocaleString('ru-RU');
 
 document.getElementById('subscriberWord').textContent =
     getSubscriberWord(count);
+
+});
 </script>
 
 </body>
