@@ -48,7 +48,7 @@ jobs:
           MAX_CHAT_ID: ${{ secrets.MAX_CHAT_ID }}
         run: |
           response="$(curl --fail --silent --show-error \
-            --cacert max-ca.pem \
+            --cacert russian-root-ca.pem \
             -H "Authorization: ${MAX_BOT_TOKEN}" \
             "https://platform-api2.max.ru/chats/${MAX_CHAT_ID}")"
           count="$(python3 -c 'import json, sys; print(json.load(sys.stdin)["participants_count"])' <<< "$response")"
