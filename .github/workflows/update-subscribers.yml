@@ -14,21 +14,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Add verified MAX certificate
+      - name: Prepare MAX certificate
         run: |
+          set -e
+
           curl --fail --silent --show-error --insecure \
             -o russian-root-ca.cer \
             https://gu-st.ru/content/Other/doc/russian_trusted_root_ca.cer
-
-          fingerprint="$(openssl x509 -in russian-root-ca.cer -noout -fingerprint -sha1 | cut -d= -f2 | tr -d ':')"
-          test "$fingerprint" = "8FF915CCAB7BC16F8C5C8099D53E0E115B3AEC2F"
 
           curl --fail --silent --show-error --insecure \
             -o russian-sub-ca.cer \
             https://gu-st.ru/content/Other/doc/russian_trusted_sub_ca.cer
 
-          openssl verify -CAfile russian-root-ca.cer russian-sub-ca.cer
-          cat russian-root-ca.cer russian-sub-ca.cer > max-ca.pem
+          for cert in root sub; do
+            input="russian-${cert}-ca.cer"
+            output="russian-${cert}-ca.pem"
+            if grep -q "BEGIN CERTIFICATE" "$input"; then
+              cp "$input" "$output"
+            else
+              openssl x509 -inform DER -in "$input" -out "$output"
+            fi
+          done
+
+          fingerprint="$(openssl x509 -in russian-root-ca.pem -noout -fingerprint -sha1 | cut -d= -f2 | tr -d ':')"
+          test "$fingerprint" = "8FF915CCAB7BC16F8C5C8099D53E0E115B3AEC2F"
+
+          openssl verify -CAfile russian-root-ca.pem russian-sub-ca.pem
+          cat russian-root-ca.pem russian-sub-ca.pem > max-ca.pem
 
       - name: Get subscriber count
         env:
