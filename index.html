@@ -431,15 +431,33 @@ defer>
     <p>© 2026 Design Future. Все права защищены.</p>
 </footer>
 <script>
-function getPeopleWord(number) {
+function getSubscriberWord(number) {
     const n = Math.abs(number) % 100;
     const n1 = n % 10;
 
-    if (n >= 11 && n <= 19) return 'человек';
-    if (n1 === 1) return 'человек';
-    if (n1 >= 2 && n1 <= 4) return 'человека';
+    if (n >= 11 && n <= 19) {
+        return 'подписчиков';
+    }
 
-    return 'человек';
+    if (n1 === 1) {
+        return 'подписчик';
+    }
+
+    if (n1 >= 2 && n1 <= 4) {
+        return 'подписчика';
+    }
+
+    return 'подписчиков';
+}
+
+const count = 1683;
+
+document.getElementById('subscriberCount').textContent =
+    count.toLocaleString('ru-RU');
+
+document.getElementById('subscriberWord').textContent =
+    getSubscriberWord(count);
+</script>
 }
 
 const count = 1683;
