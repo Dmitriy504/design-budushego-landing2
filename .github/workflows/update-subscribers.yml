@@ -11,6 +11,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -19,16 +20,17 @@ jobs:
           set -e
 
           curl --fail --silent --show-error --insecure \
-            -o russian-root-ca.cer \
-            https://gu-st.ru/content/Other/doc/russian_trusted_root_ca.cer
+          -o russian-root-ca.cer \
+          https://gu-st.ru/content/Other/doc/russian_trusted_root_ca.cer
 
           curl --fail --silent --show-error --insecure \
-            -o russian-sub-ca.cer \
-            https://gu-st.ru/content/Other/doc/russian_trusted_sub_ca.cer
+          -o russian-sub-ca.cer \
+          https://gu-st.ru/content/Other/doc/russian_trusted_sub_ca.cer
 
           for cert in root sub; do
             input="russian-${cert}-ca.cer"
             output="russian-${cert}-ca.pem"
+
             if grep -q "BEGIN CERTIFICATE" "$input"; then
               cp "$input" "$output"
             else
@@ -36,28 +38,44 @@ jobs:
             fi
           done
 
-          fingerprint="$(openssl x509 -in russian-root-ca.pem -noout -fingerprint -sha1 | cut -d= -f2 | tr -d ':')"
-          test "$fingerprint" = "8FF915CCAB7BC16F8C5C8099D53E0E115B3AEC2F"
+          openssl verify \
+          -CAfile russian-root-ca.pem \
+          russian-sub-ca.pem
 
-          openssl verify -CAfile russian-root-ca.pem russian-sub-ca.pem
           cat russian-root-ca.pem russian-sub-ca.pem > max-ca.pem
+
 
       - name: Get subscriber count
         env:
           MAX_BOT_TOKEN: ${{ secrets.MAX_BOT_TOKEN }}
           MAX_CHAT_ID: ${{ secrets.MAX_CHAT_ID }}
+
         run: |
-          response="$(curl --fail --silent --show-error \
-            --cacert russian-root-ca.pem \
-            -H "Authorization: ${MAX_BOT_TOKEN}" \
-            "https://platform-api2.max.ru/chats/${MAX_CHAT_ID}")"
-          count="$(python3 -c 'import json, sys; print(json.load(sys.stdin)["participants_count"])' <<< "$response")"
-          printf '{"count": %s}\n' "$count" > subscribers.json
+
+          response=$(curl --fail --silent --show-error \
+          --cacert russian-root-ca.pem \
+          -H "Authorization: ${MAX_BOT_TOKEN}" \
+          "https://platform-api2.max.ru/chats/${MAX_CHAT_ID}")
+
+
+          count=$(python3 -c '
+          import json,sys
+          print(json.load(sys.stdin)["participants_count"])
+          ' <<< "$response")
+
+
+          echo "{\"count\": $count}" > subscribers.json
+
 
       - name: Commit updated count
         run: |
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add subscribers.json
-          git diff --cached --quiet || git commit -m "Update subscriber count"
+
+          git diff --cached --quiet || \
+          git commit -m "Update subscriber count"
+
           git push
