@@ -281,7 +281,7 @@ onclick="ym(111697403,'reachGoal','subscribe_click');">
 </p>
 
 <div class="counter">
-Уже более <strong>1600+</strong> подписчиков
+Уже более <strong id="subscriber-count">1 600+</strong> подписчиков
 </div>
 
 <div style="margin-top:35px;">
@@ -421,6 +421,16 @@ defer>
 
     <p>© 2026 Design Future. Все права защищены.</p>
 </footer>
-  
+<script>
+  fetch('/subscribers.json?ts=' + Date.now(), { cache: 'no-store' })
+    .then(response => response.json())
+    .then(({ count }) => {
+      const element = document.getElementById('subscriber-count');
+      if (element) {
+        element.textContent = new Intl.NumberFormat('ru-RU').format(count) + '+';
+      }
+    })
+    .catch(() => {});
+</script>
 </body>
 </html>
