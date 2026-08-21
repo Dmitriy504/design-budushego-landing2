@@ -281,7 +281,7 @@ onclick="ym(111697403,'reachGoal','subscribe_click');">
 </p>
 
 <div class="counter">
-Уже с нами <strong id="subscriber-count">1 675</strong> человек
+Уже с нами <strong id="subscriberCount">1683</strong> <span id="subscriberWord">человека</span>
 </div>
 
 <div style="margin-top:35px;">
@@ -422,15 +422,24 @@ defer>
     <p>© 2026 Design Future. Все права защищены.</p>
 </footer>
 <script>
-  fetch('/subscribers.json?ts=' + Date.now(), { cache: 'no-store' })
-    .then(response => response.json())
-    .then(({ count }) => {
-      const element = document.getElementById('subscriber-count');
-      if (element) {
-        element.textContent = new Intl.NumberFormat('ru-RU').format(count);
-      }
-    })
-    .catch(() => {});
+function getPeopleWord(number) {
+    const n = Math.abs(number) % 100;
+    const n1 = n % 10;
+
+    if (n >= 11 && n <= 19) return 'человек';
+    if (n1 === 1) return 'человек';
+    if (n1 >= 2 && n1 <= 4) return 'человека';
+
+    return 'человек';
+}
+
+const count = 1683;
+
+document.getElementById('subscriberCount').textContent =
+    count.toLocaleString('ru-RU');
+
+document.getElementById('subscriberWord').textContent =
+    getPeopleWord(count);
 </script>
 </body>
 </html>
