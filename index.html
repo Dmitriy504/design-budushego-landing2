@@ -281,7 +281,7 @@ onclick="ym(111697403,'reachGoal','subscribe_click');">
 </p>
 
 <div class="counter">
-Уже более <strong id="subscriber-count">1 600+</strong> подписчиков
+Уже с нами <strong id="subscriber-count">1 675</strong> человек
 </div>
 
 <div style="margin-top:35px;">
@@ -427,7 +427,7 @@ defer>
     .then(({ count }) => {
       const element = document.getElementById('subscriber-count');
       if (element) {
-        element.textContent = new Intl.NumberFormat('ru-RU').format(count) + '+';
+        element.textContent = new Intl.NumberFormat('ru-RU').format(count);
       }
     })
     .catch(() => {});
