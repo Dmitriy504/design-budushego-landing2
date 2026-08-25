@@ -4,6 +4,9 @@
 <!-- Yandex Autoplacement 19797097 -->
 <script src="https://yandex.ru/ads/system/context.js" async></script>
 <script data-page-id="19797097" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+<!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -412,7 +415,16 @@ class="btn"
 onclick="ym(111697403,'reachGoal','subscribe_click');">
 Перейти в канал MAX
 </a>
-
+<!-- Yandex.RTB R-A-19797097-16 -->
+<script>
+window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-19797097-16",
+        "type": "overlay",
+        "platform": "touch"
+    })
+})
+</script>
 </div>
 
 </section>
