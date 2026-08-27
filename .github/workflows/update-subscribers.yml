@@ -79,3 +79,4 @@ jobs:
           git commit -m "Update subscriber count"
 
           git push
+
