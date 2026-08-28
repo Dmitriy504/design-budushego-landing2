@@ -453,7 +453,7 @@ function getSubscriberWord(number) {
     return 'подписчиков';
 }
 
-fetch('https://design-future.online/subscribers.json?t=' + Date.now(), { cache: 'no-store' })
+fetch('subscribers.json?t=' + Date.now(), { cache: 'no-store' })
 .then(response => response.json())
 .then(data => {
 
