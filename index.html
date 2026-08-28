@@ -453,7 +453,7 @@ function getSubscriberWord(number) {
     return 'подписчиков';
 }
 
-fetch('subscribers.json?t=' + Date.now(), { cache: 'no-store' })
+fetch('https://functions.yandexcloud.net/d4e35prh71png01mvbam')
 .then(response => response.json())
 .then(data => {
 
